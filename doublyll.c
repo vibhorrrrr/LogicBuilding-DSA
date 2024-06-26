@@ -197,3 +197,14 @@ void Display(PNODE First)
     }
     printf("NULL\n");
 }
+
+int Count(PNODE First)
+{
+    int iCnt = 0;
+    while(First != NULL)
+    {
+        iCnt++;
+        First = First->next;
+    }
+    return iCnt;
+}
