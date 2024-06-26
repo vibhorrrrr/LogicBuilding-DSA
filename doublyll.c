@@ -208,3 +208,36 @@ int Count(PNODE First)
     }
     return iCnt;
 }
+
+int main()
+{
+    PNODE Head = NULL;
+    int iRet = 0;
+
+    InsertFirst(&Head, 8);
+    InsertFirst(&Head, 4);
+    InsertFirst(&Head, 12);
+
+    InsertLast(&Head, 5);
+    InsertLast(&Head, 18);
+    InsertLast(&Head, 3);
+
+    InsertAtPos(&Head, 11, 5);
+
+    Display(Head);
+    iRet = Count(Head);
+    printf("Number of nodes are : %d\n", iRet);
+
+    DeleteAtPos(&Head, 5);
+    Display(Head);
+    iRet = Count(Head);
+    printf("Number of nodes are : %d\n", iRet);
+
+
+    return 0;
+}
+
+
+
+
+
