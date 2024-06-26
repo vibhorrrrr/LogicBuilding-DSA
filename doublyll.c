@@ -60,3 +60,47 @@ void InsertLast(PPNODE First, int No)
     }
 }
 
+void InsertAtPos(PPNODE First, int No, int iPos)
+{ 
+    int iLength=0;
+    PNODE newn = NULL;
+    PNODE temp = NULL;
+    int i = 0;
+
+    iLength = Count(*First);
+
+    if((iPos<1)|| (iPos>iLength+1))
+    {
+        printf("Invalid Position\n");
+        return;
+    }
+
+    if(iPos == 1)
+    {
+        InsertFirst(First, No);
+    }
+    else if(iPos == iLength+1)
+    {
+        InsertLast(First, No);
+    }
+    else
+    {
+        newn = (PNODE)malloc(sizeof(NODE));
+        
+        newn->data = No;
+        newn->next = NULL;
+        newn->prev = NULL;
+
+        temp = *First;
+
+        for(i = 1; i < iPos-1; i++)
+        {
+            temp = temp->next;
+        }
+        newn->next = temp->next;
+        temp->next->prev = newn;    // $
+        temp->next = newn;
+        newn->prev = temp;          // $
+    }
+}
+
