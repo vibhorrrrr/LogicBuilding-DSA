@@ -187,5 +187,13 @@ void DeleteAtPos(PPNODE First, int iPos)
     }
 }
 
-
-
+void Display(PNODE First)
+{
+    printf("NULL <=> ");
+    while(First != NULL)
+    {
+        printf("|%d| <=> ", First->data); // Print the data
+        First = First->next;
+    }
+    printf("NULL\n");
+}
