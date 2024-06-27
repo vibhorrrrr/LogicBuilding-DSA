@@ -75,3 +75,28 @@ void SinglyLL::InsertFirst(int No)
     iCount++;
 }
 
+void SinglyLL::InsertLast(int No)
+{
+    PNODE temp = NULL;
+    PNODE newn = NULL;
+
+    newn = new NODE;    // malloc
+
+    newn->data = No;
+    newn->next = NULL;
+
+    if(First == NULL)   // if(iCount==0)
+    {
+        First = newn;
+    }
+    else
+    {
+        temp = First;
+        while(temp->next != NULL)
+        {
+            temp = temp -> next;
+        }
+        temp->next = newn;
+    }
+    iCount++;
+}
