@@ -53,3 +53,25 @@ int SinglyLL::Count()
 {
     return iCount;
 }
+
+void SinglyLL::InsertFirst(int No)
+{
+    PNODE newn = NULL;
+
+    newn = new NODE;    // malloc
+
+    newn->data = No;
+    newn->next = NULL;
+
+    if(First == NULL)   // if(iCount==0)
+    {
+        First = newn;
+    }
+    else
+    {
+        newn->next = First;
+        First = newn;
+    }
+    iCount++;
+}
+
