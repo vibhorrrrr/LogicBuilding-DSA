@@ -137,3 +137,24 @@ void SinglyLL::InsertAtPos(int No, int iPos)
     }
 
 }
+
+void SinglyLL::DeleteFirst()
+{
+    PNODE temp = First;
+    if(First == NULL)    // iCount == 0
+    {
+        cout<<"Linked list is empty\n";
+        return;
+    }
+    else if(First->next==NULL)   // iCount == 1
+    {
+        delete First;
+    }
+    else
+    {
+        First = First->next;
+        delete temp;
+    }
+    iCount--;
+}
+
