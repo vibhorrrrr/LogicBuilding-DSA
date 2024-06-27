@@ -30,3 +30,10 @@ class SinglyLL
         void DeleteLast();
         void DeleteAtPos(int iPos);
 };
+
+SinglyLL::SinglyLL()
+{
+    cout<<"Inside Constructor\n";
+    First = NULL;
+    iCount = 0;
+}
