@@ -135,5 +135,88 @@ void SinglyLL::InsertAtPos(int No, int iPos)
         temp->next=newn;
         iCount++;
     }
+}
+
+
+void SinglyLL::DeleteFirst()
+{
+    PNODE temp = First;
+    if(First == NULL)    // iCount == 0
+    {
+        cout<<"Linked list is empty\n";
+        return;
+    }
+    else if(First->next==NULL)   // iCount == 1
+    {
+        delete First;
+    }
+    else
+    {
+        First = First->next;
+        delete temp;
+    }
+    iCount--;
+}
+
+void SinglyLL::DeleteLast()
+{
+    
+    PNODE temp = First;
+    if(First == NULL)    // iCount == 0
+    {
+        cout<<"Linked list is empty\n";
+        return;
+    }
+    else if(First->next==NULL)   // iCount == 1
+    {
+        delete First;
+    }
+    else
+    {
+        while(temp->next->next!=NULL)
+        {
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next=NULL;
+    }
+    iCount--;
 
 }
+
+void SinglyLL::DeleteAtPos(int iPos)
+{
+    int i = 0;
+    PNODE temp1 = NULL;
+    PNODE temp2 = NULL;
+    if((iPos<1)||(iPos>iCount))
+    {
+        cout<<"Invalid position\n";
+        return;
+    }
+
+    if(iPos == 1)
+    {
+        DeleteFirst();
+    }
+    else if(iPos==iCount)
+    {
+        DeleteLast();
+    }
+    else
+    {    
+        temp1 = First;
+        
+        for(i=1; i<iPos-1; i++)
+        {
+            temp1 = temp1 -> next;
+        }
+        temp2=temp1->next;
+        
+        temp1->next = temp2->next;
+        delete temp2;
+
+        iCount--;
+    }
+}
+ 
