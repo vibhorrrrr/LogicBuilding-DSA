@@ -219,4 +219,55 @@ void SinglyLL::DeleteAtPos(int iPos)
         iCount--;
     }
 }
+
+int main()
+{
+    SinglyLL obj;
+    int iRet = 0;
+
+    obj.InsertFirst(51);
+    obj.InsertFirst(21);
+    obj.InsertFirst(11);
+
+    obj.Display();
+
+    iRet = obj.Count();
+
+    cout<<"Number of elements are: "<<iRet<<endl;
+
+    obj.InsertLast(101);
+    obj.InsertLast(111);
+    obj.InsertLast(121);
+    obj.Display();
+
+    obj.DeleteFirst();
+    obj.Display();
+    iRet = obj.Count();
+    cout<<"Number of elements are: "<<iRet<<endl;
+
+    obj.DeleteLast();
+    obj.Display();
+    iRet = obj.Count();
+    cout<<"Number of elements are: "<<iRet<<endl;
+
+    obj.InsertAtPos(105, 5);
+    obj.Display();
+    iRet = obj.Count();
+    cout<<"Number of elements are: "<<iRet<<endl;
+
+    obj.DeleteAtPos(5);
+    obj.Display();
+    iRet = obj.Count();
+    cout<<"Number of elements are: "<<iRet<<endl;
+
+    return 0;
+}
+
+
+
+
+
+
+
+
  
