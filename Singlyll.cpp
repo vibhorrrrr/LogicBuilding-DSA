@@ -100,3 +100,40 @@ void SinglyLL::InsertLast(int No)
     }
     iCount++;
 }
+
+void SinglyLL::InsertAtPos(int No, int iPos)
+{
+    PNODE newn = NULL;
+    int i = 0;
+    PNODE temp = NULL;
+    if((iPos<1)||(iPos>iCount+1))
+    {
+        cout<<"Invalid position\n";
+        return;
+    }
+
+    if(iPos == 1)
+    {
+        InsertFirst(No);
+    }
+    else if(iPos==iCount+1)
+    {
+        InsertLast(No);
+    }
+    else
+    {
+        temp = First;
+        newn = new NODE;
+        newn->data= No;
+        newn->next= NULL;
+
+        for(i=1; i<iPos-1; i++)
+        {
+            temp = temp->next;
+        }
+        newn->next=temp->next;
+        temp->next=newn;
+        iCount++;
+    }
+
+}
