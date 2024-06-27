@@ -37,3 +37,14 @@ SinglyLL::SinglyLL()
     First = NULL;
     iCount = 0;
 }
+ 
+void SinglyLL::Display()
+{
+    PNODE temp = First;
+    while(temp!=NULL)
+    {
+        cout<<"|"<<temp->data<<"| -> ";
+        temp = temp->next;
+    }
+    cout<<"NULL\n";
+}
