@@ -48,3 +48,8 @@ void SinglyLL::Display()
     }
     cout<<"NULL\n";
 }
+
+int SinglyLL::Count()
+{
+    return iCount;
+}
