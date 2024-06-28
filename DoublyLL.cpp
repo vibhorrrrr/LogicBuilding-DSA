@@ -139,3 +139,25 @@ void DoublyLL::InsertAtPos(int No, int iPos)
         iCount++;
     }
 }
+
+void DoublyLL::DeleteFirst() {
+    if (First == NULL) 
+    { // iCount == 0
+        cout << "Linked list is empty\n";
+        return;
+    }
+
+    if (First->next == NULL) 
+    { // iCount == 1
+        delete First;
+        First = NULL;
+    } 
+    else 
+    {
+        PNODE temp = First;
+        First = First->next;
+        delete temp;
+        First->prev = NULL;
+    }
+    iCount--;
+}
