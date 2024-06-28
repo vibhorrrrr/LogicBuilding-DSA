@@ -100,3 +100,42 @@ void DoublyLL::InsertLast(int No)
     }
     iCount++;
 }
+
+void DoublyLL::InsertAtPos(int No, int iPos) 
+{
+    if (iPos < 1 || iPos > iCount + 1) 
+    {
+        cout << "Invalid Position\n";
+        return;
+    }
+
+    if (iPos == 1) 
+    {
+        InsertFirst(No);
+    } 
+    else if (iPos == iCount + 1) 
+    {
+        InsertLast(No);
+    } 
+    else 
+    {
+        PNODE newn = new NODE;
+        PNODE temp = First;
+
+        newn->data = No;
+        newn->next = NULL;
+        newn->prev = NULL;
+
+        for (int i = 1; i < iPos - 1; i++) 
+        {
+            temp = temp->next;
+        }
+
+        newn->next = temp->next;
+        newn->next->prev = newn;
+        temp->next = newn;
+        newn->prev = temp;
+
+        iCount++;
+    }
+}
