@@ -75,3 +75,28 @@ void DoublyLL::InsertFirst(int No)
     }
     iCount++;
 }
+
+void DoublyLL::InsertLast(int No) 
+{
+    PNODE newn = new NODE;
+    PNODE temp = First;
+
+    newn->data = No;
+    newn->next = NULL;
+    newn->prev = NULL;
+
+    if (iCount == 0) 
+    {
+        First = newn;
+    } 
+    else 
+    {
+        while (temp->next != NULL) 
+        {
+            temp = temp->next;
+        }
+        temp->next = newn;
+        newn->prev = temp;
+    }
+    iCount++;
+}
