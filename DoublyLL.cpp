@@ -161,3 +161,29 @@ void DoublyLL::DeleteFirst() {
     }
     iCount--;
 }
+
+void DoublyLL::DeleteLast() 
+{
+    if (First == NULL) 
+    { // iCount == 0
+        cout << "Linked list is empty\n";
+        return;
+    }
+
+    if (First->next == NULL) 
+    { // iCount == 1
+        delete First;
+        First = NULL;
+    } 
+    else 
+    {
+        PNODE temp = First;
+        while (temp->next->next != NULL) 
+        {
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = NULL;
+    }
+    iCount--;
+}
