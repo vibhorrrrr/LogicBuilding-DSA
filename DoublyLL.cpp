@@ -49,3 +49,29 @@ void DoublyLL::Display()
     }
     cout << "NULL\n";
 }
+
+int DoublyLL::Count() 
+{
+    return iCount;
+}
+
+void DoublyLL::InsertFirst(int No) 
+{
+    PNODE newn = new NODE;
+
+    newn->data = No;
+    newn->next = NULL;
+    newn->prev = NULL;
+
+    if (iCount == 0) 
+    {
+        First = newn;
+    } 
+    else 
+    {
+        newn->next = First;
+        First->prev = newn;
+        First = newn;
+    }
+    iCount++;
+}
