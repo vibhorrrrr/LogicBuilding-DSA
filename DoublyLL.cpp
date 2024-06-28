@@ -39,3 +39,13 @@ DoublyLL::DoublyLL()
     iCount = 0;
 }
 
+void DoublyLL::Display() 
+{
+    PNODE temp = First;
+    while (temp != NULL) 
+    {
+        cout << "|" << temp->data << "| <=> ";
+        temp = temp->next;
+    }
+    cout << "NULL\n";
+}
