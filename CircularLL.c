@@ -56,3 +56,20 @@ void InsertLast(PPNODE First, PPNODE Last, int No)
     (*Last)->next = *First;     // or (*Last)->next = newn
 
 }
+
+void Display(PNODE First, PNODE Last)
+{
+    if((First==NULL)&&(Last==NULL))
+    {
+        printf("LinkedList is empty\n");
+        return;
+    }
+
+    do
+    {
+        printf("| %d | -> ", First->data);
+        First = First -> next;
+    }while (First != Last->next);
+
+    printf("\n");
+}
