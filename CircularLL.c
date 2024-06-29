@@ -33,3 +33,26 @@ void InsertFirst(PPNODE First, PPNODE Last, int No)
     (*Last)->next = *First;     // or (*Last)->next = newn
 
 }
+
+void InsertLast(PPNODE First, PPNODE Last, int No)
+{
+    PNODE newn = NULL;
+
+    newn = (PNODE)malloc(sizeof(PNODE));
+
+    newn -> data = No;
+    newn -> next = NULL;
+
+    if((*First == NULL) && (*Last == NULL))
+    {
+        *First = newn;
+        *Last = newn;
+    }
+    else
+    {
+        (*Last)->next=newn;
+        *Last = newn;
+    }
+    (*Last)->next = *First;     // or (*Last)->next = newn
+
+}
