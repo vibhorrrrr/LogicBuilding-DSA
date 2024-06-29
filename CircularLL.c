@@ -216,3 +216,36 @@ void DeleteAtPos(PPNODE First, PPNODE Last, int iPos)
         free(temp2);
     }
 }
+
+int main()
+{
+    PNODE Head = NULL;
+    PNODE Tail = NULL;
+    int iRet = 0;
+
+    InsertFirst(&Head, &Tail, 51);
+    InsertFirst(&Head, &Tail, 21);
+    InsertFirst(&Head, &Tail, 11);
+
+    InsertLast(&Head, &Tail, 101);
+    InsertLast(&Head, &Tail, 111);
+    InsertLast(&Head, &Tail, 121);
+
+    InsertAtPos(&Head, &Tail, 105, 5);
+
+    Display(Head, Tail);
+
+    iRet = Count(Head, Tail);
+
+    printf("Number of elements are: %d\n", iRet);
+    
+    DeleteAtPos(&Head, &Tail, 5);
+    
+    Display(Head, Tail);
+
+    iRet = Count(Head, Tail);
+
+    printf("Number of elements are: %d\n", iRet);
+
+    return 0;
+}
