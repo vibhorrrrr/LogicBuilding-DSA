@@ -91,3 +91,23 @@ int Count(PNODE First, PNODE Last)
    
     return iCount;
 }
+
+void DeleteFirst(PPNODE First, PPNODE Last)
+{
+    if((*First == NULL) && (*Last == NULL)) // Empty LL
+    {
+        return;
+    }
+    else if(*First == *Last)   // Single node
+    {
+        free(*First);   // or free(*Last);
+        *First = NULL;
+        *Last = NULL;
+    }
+    else    // More than one node
+    {
+        *First=(*First)->next;   // (*Last) -> next = *First->next;
+        free((*Last)->next);       // free(*First)
+        (*Last)->next=*First;    // *First = (*Last)->next;
+    }
+}
