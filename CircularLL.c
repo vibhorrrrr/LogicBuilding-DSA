@@ -139,3 +139,42 @@ void DeleteLast(PPNODE First, PPNODE Last)
     }
 }
 
+void InsertAtPos(PPNODE First, PPNODE Last, int No, int iPos)
+{
+    int i = 0;
+    int iLength = 0;
+    PNODE newn = NULL;
+    PNODE temp = NULL;
+
+    iLength = Count(*First, *Last);
+
+    if((iPos<1) || (iPos>iLength+1))
+    {
+        printf("Invalid Position\n");
+        return;
+    }
+
+    if(iPos == 1)
+    {
+        InsertFirst(First, Last, No);
+    }
+    else if(iPos == iLength+1)
+    {
+        InsertLast(First, Last, No);
+    }
+    else
+    {
+        newn = (PNODE)malloc(sizeof(NODE));
+        newn->data = No;
+        newn->next = NULL;
+        temp = *First;
+
+        for(i=1; i<iPos-1; i++)
+        {
+            temp = temp->next;
+        }
+
+        newn->next = temp->next;
+        temp->next = newn;
+    }
+}
