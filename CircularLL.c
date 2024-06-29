@@ -73,3 +73,21 @@ void Display(PNODE First, PNODE Last)
 
     printf("\n");
 }
+
+int Count(PNODE First, PNODE Last)
+{
+    int iCount = 0;
+
+    if((First==NULL)&&(Last==NULL))
+    {
+        return 0;
+    }
+
+    do
+    {
+        iCount++;
+        First = First -> next;
+    }while (First != Last->next);
+   
+    return iCount;
+}
