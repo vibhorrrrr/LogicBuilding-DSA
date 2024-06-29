@@ -111,3 +111,31 @@ void DeleteFirst(PPNODE First, PPNODE Last)
         (*Last)->next=*First;    // *First = (*Last)->next;
     }
 }
+
+void DeleteLast(PPNODE First, PPNODE Last)
+{
+    PNODE temp = NULL;
+    if((*First == NULL) && (*Last == NULL)) // Empty LL
+    {
+        return;
+    }
+    else if(*First == *Last)   // Single node
+    {
+        free(*First);   // or free(*Last);
+        *First = NULL;
+        *Last = NULL;
+    }
+    else    // More than one node
+    {
+        temp = *First;
+        while(temp->next!=*Last)
+        {
+            temp = temp -> next;
+        }
+        free(*Last);
+        *Last = temp;
+
+        (*Last)->next = *First;
+    }
+}
+
