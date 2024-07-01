@@ -171,3 +171,26 @@ void DoublyCL::DeleteFirst()
     }
     iCount--;
 }
+
+void DoublyCL::DeleteLast()
+{
+    if(First == NULL && Last == NULL)   // Empty LL
+    {
+        return;
+    }
+    else if(First==Last)    // Single Node
+    {
+        delete First;
+        First = NULL;
+        Last = NULL;
+    }
+    else    // More than one node
+    {
+        Last = Last->prev;
+        delete Last->next;
+        
+        Last->next = First;
+        First->prev = Last;
+    }
+    iCount--;
+}
