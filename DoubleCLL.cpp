@@ -111,3 +111,41 @@ void DoublyCL::InsertLast(int No)
 
     iCount++;
 }
+
+void DoublyCL::InsertAtPos(int No, int iPos)
+{
+    PNODE temp = NULL;
+    temp = First;
+    int i=0;
+    if(iPos<1||iPos>iCount+1)
+    {
+        cout<<"Invalid Position\n";
+        return;
+    }
+    if(iPos == 1)
+    {
+        InsertFirst(No);
+    }
+    else if(iPos == iCount+1)
+    {
+        InsertLast(No);
+    }
+    else
+    {
+        PNODE newn = new NODE;
+
+        newn->data = No;
+        newn->next = NULL;
+        newn->prev = NULL;
+
+        for(i=1;i<iPos-1;i++)
+        {
+            temp = temp->next;
+        }
+        newn->next=temp->next;
+        temp->next->prev=newn;
+        temp->next=newn;
+        newn->prev=temp;
+        iCount++;
+    }
+}
