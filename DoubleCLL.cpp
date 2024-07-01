@@ -194,3 +194,36 @@ void DoublyCL::DeleteLast()
     }
     iCount--;
 }
+
+void DoublyCL::DeleteAtPos(int iPos)
+{
+    PNODE temp = NULL;
+    temp = First;
+    int i=0;
+    if(iPos<1||iPos>iCount)
+    {
+        cout<<"Invalid Position\n";
+        return;
+    }
+    if(iPos == 1)
+    {
+        DeleteFirst();
+    }
+    else if(iPos == iCount)
+    {
+        DeleteLast();
+    }
+    else
+    {
+        for(i=1;i<iPos-1;i++)
+        {
+            temp = temp->next;
+        }
+        temp->next=temp->next->next;
+        delete temp->next->prev;
+        temp->next->prev=temp;
+
+        iCount--;
+    }
+
+}
