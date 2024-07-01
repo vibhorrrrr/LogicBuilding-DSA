@@ -31,3 +31,35 @@ public:
     void DeleteLast();
     void DeleteAtPos(int iPos);
 };
+
+DoublyCL::DoublyCL()
+{
+    cout << "Inside Constructor" << endl;
+    First = NULL;
+    Last = NULL;
+    iCount = 0;
+}
+
+void DoublyCL::Display()
+{
+    if(First==NULL && Last == NULL)
+    {
+        cout<<"Linked list is empty";
+        return;
+    }
+    cout<<"<=> ";
+    do
+    {
+        cout<<"| "<<First->data<<"| <=>";
+        First = First -> next;
+    } while (Last->next!=First);
+    
+    cout<<"\n";
+}
+
+int DoublyCL::Count()
+{
+    return iCount;
+}
+
+
