@@ -227,3 +227,45 @@ void DoublyCL::DeleteAtPos(int iPos)
     }
 
 }
+
+int main()
+{
+    DoublyCL obj;
+    int iRet = 0;
+
+    obj.InsertFirst(51);
+    obj.InsertFirst(21);
+    obj.InsertFirst(11);
+
+    obj.InsertLast(101);
+    obj.InsertLast(111);
+    obj.InsertLast(121);
+
+    obj.Display();
+    iRet = obj.Count();
+
+    cout << "Number of elements are: " << iRet << "\n";
+
+    obj.DeleteFirst();
+    obj.Display();
+    iRet = obj.Count();
+
+    cout << "Number of elements are: " << iRet << "\n";
+
+    obj.DeleteLast();
+
+    obj.Display();
+    iRet = obj.Count();
+
+    cout << "Number of elements are: " << iRet << "\n";
+
+    obj.DeleteAtPos(4);
+    obj.Display();
+    iRet = obj.Count();
+
+    cout << "Number of elements are: " << iRet << "\n";
+  
+
+    return 0;
+}
+
