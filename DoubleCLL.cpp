@@ -62,4 +62,29 @@ int DoublyCL::Count()
     return iCount;
 }
 
+void DoublyCL::InsertFirst(int No)
+{
+    PNODE newn = new NODE;
+
+    newn->data = No;
+    newn->next = NULL;
+    newn->prev = NULL;
+
+    if ((First == NULL) && (Last == NULL))
+    {
+        First = newn;
+        Last = newn;
+    }
+    else
+    {
+        newn->next = First;
+        First->prev = newn;
+        First = newn;
+    }
+    Last->next = First;
+    First->prev = Last;
+
+    iCount++;
+}
+
 
