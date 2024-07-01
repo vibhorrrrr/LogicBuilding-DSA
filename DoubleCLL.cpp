@@ -149,3 +149,25 @@ void DoublyCL::InsertAtPos(int No, int iPos)
         iCount++;
     }
 }
+
+void DoublyCL::DeleteFirst()
+{
+    if(First == NULL && Last == NULL)   // Empty LL
+    {
+        return;
+    }
+    else if(First==Last)    // Single Node
+    {
+        delete First;
+        First = NULL;
+        Last = NULL;
+    }
+    else    // More than one node
+    {
+        First = First -> next;
+        delete First->prev; // delete Last->next;
+        First->prev = Last;
+        Last->next = First;
+    }
+    iCount--;
+}
