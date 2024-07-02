@@ -60,3 +60,21 @@ class Queue //FIFO
         iCount--;
         return Value;
     }
+
+    public void Display()
+    {
+        System.out.println("\nElements of Queue are: ");
+        node temp = First;
+        
+        while(temp != null)
+        {
+            System.out.print(temp.data+"\t");
+            temp=temp.next;
+        }
+        System.out.println();
+    }
+
+    public int Count()
+    {
+        return iCount;
+    }
