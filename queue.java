@@ -95,9 +95,3 @@ class queue
     
     }
 }
-
-    public int Count()
-    {
-        return iCount;
-    }
-}
