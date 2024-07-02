@@ -74,6 +74,28 @@ class Queue //FIFO
         System.out.println();
     }
 
+class queue
+{
+    public static void main(String Arg[])
+    {
+        Queue obj = new Queue();
+        int iRet = 0;
+
+        obj.EnQueue(10);
+        obj.EnQueue(20);
+        obj.EnQueue(30);
+        obj.EnQueue(40);
+
+        obj.Display();
+
+        iRet = obj.DeQueue();
+        System.out.println("\nRemoved element is: "+iRet);
+        
+        obj.Display();   
+    
+    }
+}
+
     public int Count()
     {
         return iCount;
