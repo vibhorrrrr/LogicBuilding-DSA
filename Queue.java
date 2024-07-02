@@ -9,3 +9,16 @@ class node
         next = null;
     }
 }
+
+class Queue //FIFO
+{
+    public node First;
+    public int iCount;
+
+    public Queue()
+    {
+        System.out.println("\nObject of Queue gets created successfully");
+        
+        First = null;
+        iCount = 0;
+    }
