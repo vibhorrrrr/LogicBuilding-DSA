@@ -29,3 +29,29 @@ class Stack {
         iCount++;
     }
 
+    public int Pop() {
+        int value = 0;
+
+        if (First == null) {
+            System.out.println("\nStack is Empty");
+            return -1;
+        } else {
+            value = First.data;
+            First = First.next;
+        }
+        iCount--;
+        return value;
+    }
+
+    public void Display() {
+        System.out.println("\nElements of Stack are: ");
+        Node temp = First;
+
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+}
+
