@@ -55,3 +55,23 @@ class Stack {
     }
 }
 
+public class Main {
+    public static void main(String[] args) {
+        Stack obj = new Stack();
+        int iRet = 0;
+
+        obj.Push(10);
+        obj.Push(20);
+        obj.Push(30);
+        obj.Push(40);
+
+        obj.Display();
+
+        iRet = obj.Pop();
+        System.out.println("\nRemoved element is: " + iRet);
+
+        obj.Display();
+    }
+}
+
+
