@@ -15,3 +15,10 @@ int main()
 
     printf("Enter the file name that you want to create: \n");
     scanf("%s", FileName);
+
+    fd = open(FileName, O_RDWR);
+
+    if(fd==-1)
+    {
+        printf("Unable to open the file\n");
+
