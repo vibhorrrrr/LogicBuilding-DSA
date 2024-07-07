@@ -35,5 +35,20 @@ int main()
             }
         }
     }
+    printf("Number of occurance of character: %d\n", iCount);
+    close(fd);
+    
+    return 0;
+}
+
+// total size: 672 bytes
+// 1: 100       574
+// 2: 100       472
+// 3: 100       372
+// 4: 100       272
+// 5: 100       172
+// 6: 100       72
+// 7: 72        0
+// 8: 0
 
 
