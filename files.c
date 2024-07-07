@@ -23,5 +23,17 @@ int main()
         printf("Unable to open the file\n");
         return 0;
     }
+    printf("Enter the character that you want to search: \n");
+    scanf(" %c", &ch);
+    while((iRet = read(fd,Buffer,sizeof(Buffer))) !=0)
+    {
+        for(i=0; i<iRet; i++)
+        {
+            if(Buffer[i]==ch)
+            {
+                iCount++
+            }
+        }
+    }
 
 
