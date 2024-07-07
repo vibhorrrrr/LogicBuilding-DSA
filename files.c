@@ -21,4 +21,7 @@ int main()
     if(fd==-1)
     {
         printf("Unable to open the file\n");
+        return 0;
+    }
+
 
