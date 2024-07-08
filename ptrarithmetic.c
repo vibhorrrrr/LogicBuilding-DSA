@@ -7,3 +7,6 @@ int main()
     int *p = NULL;
     int *q = NULL;
 
+    p = &(Arr[0]);
+    q = &(Arr[4]);
+
