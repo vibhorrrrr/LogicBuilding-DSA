@@ -10,3 +10,5 @@ int main()
     p = &(Arr[0]);
     q = &(Arr[4]);
 
+    printf("%d\n", q - p);
+    printf("%d\n", *p); // 11
