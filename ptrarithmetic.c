@@ -12,3 +12,13 @@ int main()
 
     printf("%d\n", q - p);
     printf("%d\n", *p); // 11
+    printf("%d\n", *q); // 111
+
+    p = p + 2;
+    printf("%d\n", *p); // 51
+
+    q = q - 2;
+    printf("%d\n", *q); // 51
+
+    return 0;
+}
