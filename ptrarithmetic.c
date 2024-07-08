@@ -3,3 +3,7 @@
 int main()
 {
     int Arr[] = {11,21,51,101,111,121};
+
+    int *p = NULL;
+    int *q = NULL;
+
